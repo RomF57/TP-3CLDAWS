@@ -1,4 +1,4 @@
-# Rapport : Projet Final AWS de BERNARD Jonathan
+# Rapport : Projet Final AWS de FIGAROLI Romain
 
 Date : 19/02/2025 
 
