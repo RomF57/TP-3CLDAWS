@@ -1,27 +1,56 @@
-# TP-3CLDAWS
-Repository de FIGAROLI Romain pour le projet E3-3CLDAWS
-
 # Rapport : Projet Final AWS 
 
 Date : 19/02/2025 
 
 Crée par : KADI Soulaymane, HOMBOURGER Tomy, BERNARD Jonathan, AHMADI Rateb et FIGAROLI Romain
 
-
 # Partie 1 : Configuration sur AWS 
 
 ## Création du VPC : 
 ![image](https://github.com/user-attachments/assets/bb9d68e6-f875-49fe-99aa-d2fe516e7272)
 
+## Sous-réseaux : 
+![image](https://github.com/user-attachments/assets/4a433005-3fed-420f-ad9e-54a597e1e185)
+
+### Table de routage public:
+![image](https://github.com/user-attachments/assets/72edd5d7-f748-4558-b965-fa61f0009e37)
+
+### Table de routage private 1:
+![image](https://github.com/user-attachments/assets/ac9ebd96-60c1-4a54-9738-2e2c0cce8b40)
+
+### NAT : 
+![image](https://github.com/user-attachments/assets/a9f2d50d-480c-4004-b970-214b0d73409f)
+
+### Passerelle internet : 
+![image](https://github.com/user-attachments/assets/f861904f-3ac8-46ea-a26f-8c7c74c0756f)
+
+### Groupe de sécurité privé : 
+![image](https://github.com/user-attachments/assets/18cc92cc-b345-4331-b435-16677b12fc91)
+
+### Groupe de sécurité public : 
+![image](https://github.com/user-attachments/assets/839d03ea-30f3-451f-8783-700e04ceb67f)
 
 ## Création de la base de données : 
-![image](https://github.com/user-attachments/assets/a15bdc78-1419-4ea7-87b9-795f48ee5b3c)
+![image](https://github.com/user-attachments/assets/6edb3f81-689c-43ac-94d6-d291828c1d6e)
+
+### Groupe de sous-réseaux DB : 
+![image](https://github.com/user-attachments/assets/a52ed422-1cf0-4a26-b223-6207738acf8e)
+
+### Règles des groupes de sécurité :
+![image](https://github.com/user-attachments/assets/4ecf50b7-8070-4687-9c09-efb722acf9c3)
 
 
-## Création de l'instance EC2
+
+## Création de l'instance EC2 public et privée
+
+### Public :
 ![image](https://github.com/user-attachments/assets/1575cd57-e7c2-44bc-8091-3cf3b9ff71f3)
 ![image](https://github.com/user-attachments/assets/0db8aea7-2b88-4124-957d-2d2b105d7dbf)
 ![image](https://github.com/user-attachments/assets/0d024bc8-1a18-49bc-95aa-f5f04ed6b9bd)
+
+### Privée :
+![image](https://github.com/user-attachments/assets/fbea78f2-e709-474e-babf-1db41d4c65fe)
+
 
 ### Cloudinit à mettre dans la création de l'instance EC2
 ```
@@ -75,7 +104,7 @@ docker run -d -p 5085:5085 --name flask-app flask-datta-able
 
 # Partie 3 : Modification du virtual env pour connecter la DB et l'application
 
-### Mettre à jour le config.py ;:
+### Mettre à jour le config.py :
 
 ![image](https://github.com/user-attachments/assets/c6b27351-513f-489f-9d3e-7299c8649111)
 
@@ -128,7 +157,7 @@ nous  avons eu des erreurs car la python3-distutils n’était pas reconnu
 
 ![image](https://github.com/user-attachments/assets/e37c8da1-7b04-4a70-9b20-cf51687dc182)
 
-### Vérification de l'utilisateur crée en amont dans la DB
+### Vérification de l'utilisateur crée en amont sur l'interface web
 
 ![image](https://github.com/user-attachments/assets/836dfe09-d5d8-42f3-994b-e5125f593b47)
 
@@ -143,6 +172,9 @@ nous  avons eu des erreurs car la python3-distutils n’était pas reconnu
 
 ###  Autorisation de l’accès au public  
 ![image](https://github.com/user-attachments/assets/dc94255d-bf5a-48dd-a3bc-b690d4d9ad6f)
+
+### Ajouter une politique de bucket S3 pour autoriser l'accès public 
+![image](https://github.com/user-attachments/assets/1ea2d481-5939-4bee-a147-03585d53b25c)
 
 ### Installation de la dépendance ZIP
 ![image](https://github.com/user-attachments/assets/11a91f94-5681-44d5-b6d9-dac70cd949c9)
@@ -182,7 +214,11 @@ nous  avons eu des erreurs car la python3-distutils n’était pas reconnu
 ### Envoie du backup de l’application et de la base de donnée vers le bucket S3  
 ![image](https://github.com/user-attachments/assets/e4f2e64c-8aae-49d8-9e4e-79a2c9dbcff9)
 
+
 # Partie 6 : Serveur de test
 
+### Création du serveur de test
+
+#### Le fichier .pem a été crée grâce à nano 
 ![image](https://github.com/user-attachments/assets/cbf6036a-5e0a-4f55-a005-5878425087f4)
 ![image](https://github.com/user-attachments/assets/999f539f-8630-448e-8b26-7f7b384f7114)
